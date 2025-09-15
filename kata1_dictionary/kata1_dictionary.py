@@ -40,6 +40,7 @@ class Dictionary:
         return f"Can't find entry for {key}"
 
 if __name__ == "__main__":
+    
     d = Dictionary()
     d.newentry('Apple', 'A fuit that grows on trees')
 
