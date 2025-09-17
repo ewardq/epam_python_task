@@ -1,4 +1,6 @@
 name: Run Python Unit Test
+permissions:
+  contents: read
 
 # Controls when the workflow will run
 on:
