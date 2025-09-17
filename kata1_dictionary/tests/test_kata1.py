@@ -1,5 +1,5 @@
 import unittest
-from kata1_dictionary import Dictionary
+from kata1.kata1_dictionary import Dictionary
 
 class TestDictionary(unittest.TestCase):
     def setUp(self):
