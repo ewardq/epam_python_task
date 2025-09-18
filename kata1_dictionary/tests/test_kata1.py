@@ -1,5 +1,7 @@
 import unittest
-from kata1.kata1_dictionary import Dictionary
+from contextlib import redirect_stdout
+from io import StringIO
+from kata1.kata1_dictionary import Dictionary, main
 
 class TestDictionary(unittest.TestCase):
     def setUp(self):
@@ -24,6 +26,17 @@ class TestDictionary(unittest.TestCase):
         self.assertEqual(self.d.look("Orange"), "A citrus fruit")
         self.assertEqual(self.d.look("Tangerine"), "A citrus fruit")
         self.assertEqual(self.d.look("Grapefruit"), "A citrus fruit")
+
+    def test_main_function(self):
+        # Create a StringIO object to capture stdout
+        with StringIO() as buffer, redirect_stdout(buffer):
+            # Call the function that prints to stdout
+            main()
+            # Get the captured output
+            output = buffer.getvalue()
+            
+        # Assert the captured output matches the expected value
+        self.assertEqual(output, "A fruit that grows on trees\nCan't find entry for Banana\n")
 
 if __name__ == "__main__":
     unittest.main()
