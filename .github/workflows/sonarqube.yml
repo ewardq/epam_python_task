@@ -53,6 +53,7 @@ jobs:
 
       - name: Run tests with coverage
         run: |
+          pytest
           coverage run -m pytest
           coverage report
           coverage xml
