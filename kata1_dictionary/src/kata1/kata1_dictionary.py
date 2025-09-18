@@ -39,10 +39,12 @@ class Dictionary:
                 return value
         return f"Can't find entry for {key}"
 
-if __name__ == "__main__":
-    
+def main():
     d = Dictionary()
-    d.newentry('Apple', 'A fuit that grows on trees')
+    d.newentry('Apple', 'A fruit that grows on trees')
 
     print(d.look('Apple'))   # A fruit that grows on trees
     print(d.look('Banana'))  # Can't find entry for Banana
+
+if __name__ == "__main__":      # pragma: no cover
+    main()
