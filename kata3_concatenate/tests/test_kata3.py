@@ -1,5 +1,5 @@
 import unittest
-from kata3_concatenate import concatenate
+from kata3.kata3_concatenate import concatenate
 
 class TestConcatenate(unittest.TestCase):
     def test_three_valid_word(self):
