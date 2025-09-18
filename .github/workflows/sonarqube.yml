@@ -3,7 +3,7 @@
 # GitHub Code Scanning alerts with the vulnerabilities found.
 # (this feature is available starting from SonarQube 9.7, Developer Edition and above)
 name: SonarQube analysis
-
+  
 on:
   push:
     branches: [ "master" ]
@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+    
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
