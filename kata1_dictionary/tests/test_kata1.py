@@ -1,7 +1,7 @@
 import unittest
 from contextlib import redirect_stdout
 from io import StringIO
-from kata1.kata1_dictionary import Dictionary, main
+from kata1_dictionary.kata1_dictionary import Dictionary, main
 
 class TestDictionary(unittest.TestCase):
     def setUp(self):
