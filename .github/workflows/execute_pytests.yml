@@ -34,8 +34,7 @@ jobs:
 
       - name: Run unit tests and coverage
         run: | 
-          export PYTHONPATH=$PYTHONPATH:$(pwd)
-          coverage run -m pytest
+          pytest
           coverage report
           coverage xml  
           coverage html
