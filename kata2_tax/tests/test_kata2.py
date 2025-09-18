@@ -1,5 +1,5 @@
 import unittest
-from kata2_tax import get_total
+from kata2.kata2_tax import get_total
 
 class TestTax(unittest.TestCase):
     def test_buy_two_out_of_three_items(self):
