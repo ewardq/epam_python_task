@@ -32,9 +32,13 @@ jobs:
           pip install pytest coverage
       #   pip install -r requirements.txt || true
 
-      - name: Run unit tests and coverage
-        run: | 
+      - name: Run unit tests
+        run: |
           pytest
+          
+      - name: Run coverage
+        run: | 
+          coverage run -m pytest
           coverage report
           coverage xml  
           coverage html
