@@ -47,7 +47,6 @@ tmp/
 
 # Configuration files (if not meant for version control)
 *.ini
-*.cfg
 *.conf
 *.yaml
 *.yml
