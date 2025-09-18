@@ -54,6 +54,7 @@ jobs:
       - name: Run tests with coverage
         run: |
           coverage run -m pytest
+          coverage report
           coverage xml
     
       - name: Set up Java
