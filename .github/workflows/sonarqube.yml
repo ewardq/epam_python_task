@@ -37,8 +37,18 @@ permissions:
   pull-requests: read # allows SonarQube to decorate PRs with analysis results
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # pytest + coverage steps
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage.xml
+
   Analysis:
     runs-on: ubuntu-latest
+    needs: test   # wait for tests to finish
 
     steps:
       - name: Set up Java
