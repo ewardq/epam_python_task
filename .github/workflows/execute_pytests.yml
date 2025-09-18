@@ -42,11 +42,3 @@ jobs:
           coverage report
           coverage xml  
           coverage html
-
-      - name: Upload coverage report artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-report
-          path: |
-            htmlcov
-            coverage.xml
