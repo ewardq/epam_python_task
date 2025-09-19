@@ -1,6 +1,29 @@
 [build-system]
-requires = ['setuptools>=42']
-build-backend = 'setuptools.build_meta'
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kata2_tax"
+version = "1.0.0"
+authors = [
+    { name = "Eduardo Martíne Piña", email = "this_email_does_not_exists@outlook.com" },
+]
+description = "A Python program that calculates total + tax of a list of items."
+readme = "README.txt"
+license = { file = "LICENSE.txt" }
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Bug Tracker" = "https://github.com/ewardq/epam_python_task/-/issues"
+"repository" = "https://github.com/ewardq/epam_python_task"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
