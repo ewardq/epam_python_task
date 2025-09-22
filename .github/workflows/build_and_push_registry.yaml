@@ -57,4 +57,15 @@ jobs:
           subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
+
+      - name: Push docker image to Docker Hub
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+          image: repo/image
+          tags: latest
+          registry: ewardq/epam_python
+          dockerfile: ./kata1_dictionary/Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
       
