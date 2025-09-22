@@ -58,14 +58,20 @@ jobs:
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
 
-      - name: Push docker image to Docker Hub
-        uses: mr-smithers-excellent/docker-build-push@v6
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
         with:
-          image: repo/image
-          tags: latest
-          registry: ewardq/epam_python
-          dockerfile: ./kata1_dictionary/Dockerfile
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push Docker image to Docker Hub
+        uses: docker/build-push-action@v6
+        with:
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
 
       
