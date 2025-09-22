@@ -57,21 +57,3 @@ jobs:
           subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
-
-      - name: Log in to Docker Hub
-        id: docker-hub
-        env:
-          username: ${{secrets.DOCKERHUB_USERNAME}}
-          password: ${{secrets.DOCKERHUB_PASSWORD}}
-        run: |
-          docker login -u $username -p $password 
-      - name: Build the Docker image
-        id: build-docker-image
-        run: |
-            ls -la 
-            docker build . -f Dockerfile -t wardq/epam_python:latest
-      - name: Push the Docker image
-        id: push-docker-image
-        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/kata1_image:latest
-
-      
