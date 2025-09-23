@@ -19,21 +19,17 @@ jobs:
       - name: Download coverage badge
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: |
-          curl -u $SONAR_TOKEN: \
-            "http://100.21.46.9:9000/api/project_badges/quality_gate?project=EPAM_python_task&metric=coverage" \
+          curl "$SONAR_HOST_URL/api/project_badges/quality_gate?project=EPAM_python_task&token=$SONAR_TOKEN" \
             -o repo_images/sonarqube_badges/quality_gate.svg
-          curl -u $SONAR_TOKEN: \
-            "http://100.21.46.9:9000/api/project_badges/measure?project=EPAM_python_task&metric=coverage" \
+          curl "$SONAR_HOST_URL/api/project_badges/measure?project=EPAM_python_task&metric=coverage&token=$SONAR_TOKEN" \
             -o repo_images/sonarqube_badges/coverage.svg
-          curl -u $SONAR_TOKEN: \
-            "http://100.21.46.9:9000/api/project_badges/measure?project=EPAM_python_task&metric=duplicated_lines_density" \
+          curl "$SONAR_HOST_URL/api/project_badges/measure?project=EPAM_python_task&metric=duplicated_lines_density&token=$SONAR_TOKEN" \
             -o repo_images/sonarqube_badges/duplicated_lines_density.svg
-          curl -u $SONAR_TOKEN: \
-            "http://100.21.46.9:9000/api/project_badges/measure?project=EPAM_python_task&metric=software_quality_reliability_issues" \
+          curl "$SONAR_HOST_URL/api/project_badges/measure?project=EPAM_python_task&metric=software_quality_reliability_issues&token=$SONAR_TOKEN" \
             -o repo_images/sonarqube_badges/software_quality_reliability_issues.svg
-          curl -u $SONAR_TOKEN: \
-            "http://100.21.46.9:9000/api/project_badges/measure?project=EPAM_python_task&metric=software_quality_security_issues" \
+          curl "$SONAR_HOST_URL/api/project_badges/measure?project=EPAM_python_task&metric=software_quality_security_issues&token=$SONAR_TOKEN" \
             -o repo_images/sonarqube_badges/software_quality_security_issues.svg
 
       - name: Commit badges
