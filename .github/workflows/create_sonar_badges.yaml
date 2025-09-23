@@ -1,0 +1,42 @@
+name: Update SonarQube Badges
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  badges:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Download coverage badge
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          curl -u $SONAR_TOKEN: \
+            "http://100.21.46.9:9000/api/project_badges/quality_gate?project=EPAM_python_task&metric=coverage" \
+            -o repo_images/sonarqube_badges/quality_gate.svg
+          curl -u $SONAR_TOKEN: \
+            "http://100.21.46.9:9000/api/project_badges/measure?project=EPAM_python_task&metric=coverage" \
+            -o repo_images/sonarqube_badges/coverage.svg
+          curl -u $SONAR_TOKEN: \
+            "http://100.21.46.9:9000/api/project_badges/measure?project=EPAM_python_task&metric=duplicated_lines_density" \
+            -o repo_images/sonarqube_badges/duplicated_lines_density.svg
+          curl -u $SONAR_TOKEN: \
+            "http://100.21.46.9:9000/api/project_badges/measure?project=EPAM_python_task&metric=software_quality_reliability_issues" \
+            -o repo_images/sonarqube_badges/software_quality_reliability_issues.svg
+          curl -u $SONAR_TOKEN: \
+            "http://100.21.46.9:9000/api/project_badges/measure?project=EPAM_python_task&metric=software_quality_security_issues" \
+            -o repo_images/sonarqube_badges/software_quality_security_issues.svg
+
+      - name: Commit badges
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add badges/*.svg
+          git commit -m "Update SonarQube badges [skip ci]" || echo "No changes"
+          git push
