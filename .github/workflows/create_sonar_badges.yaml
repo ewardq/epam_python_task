@@ -21,8 +21,8 @@ jobs:
 
       - name: Download coverage badge
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_TOKEN: ${{ secrets.SONAR_BADGE_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_BADGE_HOST_URL }}
         run: |
           curl "$SONAR_HOST_URL/api/project_badges/quality_gate?project=EPAM_python_task&token=$SONAR_TOKEN" \
             -o ./repo_images/sonarqube_badges/quality_gate.svg
