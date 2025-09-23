@@ -16,6 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Delete old badge images
+        run: rm repo_images/sonarqube_badges/*.svg
+
       - name: Download coverage badge
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
