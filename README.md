@@ -27,16 +27,30 @@ This project implements a fully automated DevSecOps pipeline for Python packages
 ## GitHub Actions breakdown
 
 ### SonarQube analysis
+[![SonarQube analysis](https://github.com/ewardq/epam_python_task/actions/workflows/sonarqube.yml/badge.svg)](https://github.com/ewardq/epam_python_task/actions/workflows/sonarqube.yml)
+
 <img src="./repo_images/SonarQube.svg">
 
-### Update SonarQube analysis results badges
+
+### Update SonarQube analysis results badges  
+[![Update SonarQube Badges](https://github.com/ewardq/epam_python_task/actions/workflows/create_sonar_badges.yaml/badge.svg)](https://github.com/ewardq/epam_python_task/actions/workflows/create_sonar_badges.yaml)
+
 <img src="./repo_images/Update_SonarQube_badges.svg">
 
+
 ### Publish Docker image to Docker Hub
+[![Publish Docker image](https://github.com/ewardq/epam_python_task/actions/workflows/push_to_docker_hub.yaml/badge.svg)](https://github.com/ewardq/epam_python_task/actions/workflows/push_to_docker_hub.yaml)
+
 <img src="./repo_images/DockerHub.svg">
 
+
 ### Publish Docker image to GitHub packages
+[![Create and publish a Docker image](https://github.com/ewardq/epam_python_task/actions/workflows/build_and_push_registry.yaml/badge.svg)](https://github.com/ewardq/epam_python_task/actions/workflows/build_and_push_registry.yaml)
+
 <img src="./repo_images/GitHub_packages.svg">
 
+
 ### Run Python unit tests
+[![Run Python Unit Test](https://github.com/ewardq/epam_python_task/actions/workflows/execute_pytests.yml/badge.svg)](https://github.com/ewardq/epam_python_task/actions/workflows/execute_pytests.yml)
+
 <img src="./repo_images/GitHub_unit_tests.svg">
