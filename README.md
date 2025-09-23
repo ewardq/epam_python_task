@@ -29,6 +29,9 @@ This project implements a fully automated DevSecOps pipeline for Python packages
 ### SonarQube analysis
 <img src="./repo_images/SonarQube.svg">
 
+### Update SonarQube analysis results badges
+<img src="./repo_images/Update_SonarQube_badges.svg">
+
 ### Publish Docker image to Docker Hub
 <img src="./repo_images/DockerHub.svg">
 
