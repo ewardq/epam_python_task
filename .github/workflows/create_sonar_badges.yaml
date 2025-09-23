@@ -19,6 +19,9 @@ jobs:
       - name: Delete old badge images
         run: rm ./repo_images/sonarqube_badges/*.svg
 
+      - name: Add timestamp to commit
+        run: date > repo_images/sonarqube_badges/.last_update
+
       - name: Download coverage badge
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -39,6 +42,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ./repo_images/sonarqube_badges/*.svg
+          git add ./repo_images/sonarqube_badges/*
           git commit -m "Update SonarQube badges [skip ci]" || echo "No changes"
           git push
