@@ -1,4 +1,4 @@
-# Automated CI/CD System with SonarQube, GitHub Actions, and AWS Deployment
+# Automated CI/CD System with SonarQube, GitHub Actions, and AWS Deployment.
 
 This project implements a fully automated DevSecOps pipeline for Python packages, integrating code quality, security, and deployment workflows. The system:
 
