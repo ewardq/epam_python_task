@@ -7,8 +7,8 @@ WORKDIR /app
 # Copy the rest of the application code into the container
 COPY ./kata1_dictionary.py .
 
-# Run the Python script and save its output as HTML
-RUN python ./kata1_dictionary.py > index.html
+# Run the Python script, write it to console and save its output as HTML
+RUN python ./kata1_dictionary.py | tee index.html
 
 # ========  Step 2: Serve with Nginx   ========
 FROM nginx:alpine
