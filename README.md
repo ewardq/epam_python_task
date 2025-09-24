@@ -9,6 +9,9 @@ This project implements a fully automated DevSecOps pipeline for Python packages
 - Builds Docker images and publishes them to GitHub Container Registry.
 - Deploys validated artifacts to AWS infrastructure.
 
+<img src="./repo_images/Complete_CICD.svg">
+
+
 ## SonarQube report
 <div align="center">
 
