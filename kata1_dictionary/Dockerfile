@@ -1,5 +1,5 @@
 # ====  Step 1: Run Python script and generate HTML   ====
-FROM python:3.12.2-slim-bookworm AS builder
+FROM python:3.12-slim-bookworm AS builder
 
 # Set the working directory in the container
 WORKDIR /app
