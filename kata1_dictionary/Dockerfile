@@ -1,8 +1,8 @@
 FROM python:3.12.2-slim-bookworm
 
 # Add non-root user so the container doesn't run as a root user.
-RUN addgroup -S nonroot \
-    && adduser -S nonroot -G nonroot
+RUN groupadd -r nonroot \
+    && useradd -r -g nonroot nonroot
 
 USER nonroot
 
