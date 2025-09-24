@@ -11,8 +11,7 @@ env:
   ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }} 
   ECS_SERVICE: ${{ vars.ECS_SERVICE }} 
   ECS_CLUSTER: ${{ vars.ECS_CLUSTER }}
-  ECS_TASK_DEFINITION: ${{ vars.ECS_TASK_DEFINITION }} # set this to the path to your Amazon ECS task definition
-                                               # file, e.g. .aws/task-definition.json
+  ECS_TASK_DEFINITION: ${{ vars.ECS_TASK_DEFINITION }} 
   CONTAINER_NAME: kata1_container           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 
