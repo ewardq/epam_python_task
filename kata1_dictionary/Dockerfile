@@ -1,5 +1,10 @@
 # ====  Step 1: Run Python script and generate HTML   ====
-FROM python:3.12.2-slim-bookworm
+FROM python:3.12.2-slim-bookworm AS builder
+
+# Add non-root user so the container doesn't run as a root user.
+RUN groupadd -r nonroot \
+    && useradd -r -g nonroot nonroot
+USER nonroot
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
@@ -18,11 +23,6 @@ COPY --from=builder /app/index.html /usr/share/nginx/html/index.html
 
 # Expose port 80
 EXPOSE 80
-
-# Add non-root user so the container doesn't run as a root user.
-RUN groupadd -r nonroot \
-    && useradd -r -g nonroot nonroot
-USER nonroot
 
 # Run Nginx in foreground
 CMD ["nginx", "-g", "daemon off;"]
