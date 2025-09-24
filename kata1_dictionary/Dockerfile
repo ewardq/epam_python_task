@@ -13,7 +13,7 @@ WORKDIR /usr/src/app
 COPY ./kata1_dictionary.py .
 
 # Run the Python script and save its output as HTML
-RUN python script.py > index.html
+RUN python ./kata1_dictionary.py > index.html
 
 # ========  Step 2: Serve with Nginx   ========
 FROM nginx:alpine
