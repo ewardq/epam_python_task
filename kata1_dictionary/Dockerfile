@@ -11,7 +11,7 @@ COPY ./kata1_dictionary.py .
 RUN python ./kata1_dictionary.py | tee index.html
 
 # ========  Step 2: Serve with Nginx   ========
-FROM nginx:alpine
+FROM nginx:1.27-alpine
 
 # Copy generated HTML from builder stage into Nginx's web root
 COPY --from=builder /app/index.html /usr/share/nginx/html/index.html
