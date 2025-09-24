@@ -1,13 +1,8 @@
 # ====  Step 1: Run Python script and generate HTML   ====
 FROM python:3.12.2-slim-bookworm AS builder
 
-# Add non-root user so the container doesn't run as a root user.
-RUN groupadd -r nonroot \
-    && useradd -r -g nonroot nonroot
-USER nonroot
-
 # Set the working directory in the container
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy the rest of the application code into the container
 COPY ./kata1_dictionary.py .
