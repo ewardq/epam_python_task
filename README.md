@@ -57,3 +57,9 @@ This project implements a fully automated DevSecOps pipeline for Python packages
 [![Run Python Unit Test](https://github.com/ewardq/epam_python_task/actions/workflows/execute_pytests.yml/badge.svg)](https://github.com/ewardq/epam_python_task/actions/workflows/execute_pytests.yml)
 
 <img src="./repo_images/GitHub_unit_tests.svg">
+
+
+### Deploy in AWS Elastic Container Service
+[![Deploy to Amazon ECS](https://github.com/ewardq/epam_python_task/actions/workflows/deploy_in_aws.yml/badge.svg)](https://github.com/ewardq/epam_python_task/actions/workflows/deploy_in_aws.yml)
+
+<img src="./repo_images/Deploy_to_ECS.svg.svg">
