@@ -62,4 +62,4 @@ This project implements a fully automated DevSecOps pipeline for Python packages
 ### Deploy in AWS Elastic Container Service
 [![Deploy to Amazon ECS](https://github.com/ewardq/epam_python_task/actions/workflows/deploy_in_aws.yml/badge.svg)](https://github.com/ewardq/epam_python_task/actions/workflows/deploy_in_aws.yml)
 
-<img src="./repo_images/Deploy_to_ECS.svg.svg">
+<img src="./repo_images/Deploy_to_ECS.svg">
