@@ -22,6 +22,6 @@ def concatenate(input_list):
 
     return output_word
 
-if __name__ == "__main__":
+if __name__ == "__main__":               # pragma: no cover
     input_list = ["yoda", "best", "has"]
     print(concatenate(input_list))
